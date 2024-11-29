@@ -1,13 +1,13 @@
-import axios from 'axios';
-import { useState } from 'react';
-import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
+import axios from "axios";
+import { useState } from "react";
+import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 
 const formDataObj = {
-  adSoyad: '',
-  email: '',
-  departman: '',
-  unvan: '',
-  gorevler: '',
+  adSoyad: "",
+  email: "",
+  departman: "",
+  unvan: "",
+  gorevler: "",
 };
 export default function FormContainer(props) {
   const { addUser } = props;
@@ -23,7 +23,7 @@ export default function FormContainer(props) {
   function handleSubmit(event) {
     event.preventDefault();
     axios
-      .post('https://reqres.in/api/users', formData)
+      .post("https://reqres.in/api/users", formData)
       .then((res) => {
         console.log(res);
         addUser(res.data);
